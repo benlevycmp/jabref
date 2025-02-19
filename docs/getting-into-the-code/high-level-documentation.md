@@ -16,9 +16,9 @@ The `model` should have no dependencies to other classes of JabRef and the `logi
 The `cli` package bundles classes that are responsible for JabRef's command line interface.
 The `preferences` package represents all information customizable by a user for her personal needs.
 
-We use an event bus to publish events from the `model` to the other layers.
-This allows us to keep the architecture but still react upon changes within the core in the outer layers.
-Note that we are currently switching to JavaFX's observables, as this concepts seems as we aim for a stronger coupling to the data producers.
+We use an event bus to publish events from the model to subscribers.
+Event-driven architecture provides a loose coupling between the publisher and subscribers, letting subscribers – application components – react to the publisher without introducing unwanted dependencies.
+JabRef will soon change to using JavaFX “observables” for tighter coupling between application components and the data model, while retaining a modular design.
 
 ## Package Structure
 
